@@ -1,0 +1,241 @@
+{% extends "main.html" %} {% block title %}Portfolio{% endblock %} {% block navbar %}{% endblock %} {% block content %}
+{% include "./commons/navbar-fixed.html" %}
+<main>
+	<div class="mdc-layout-grid--span-12 home-starting-grid">
+		<div class="mdc-layout-grid__cell--span-12 portfolio-container geoview" style="padding-bottom: 120px;background:linear-gradient(to bottom, #f7f9fb, rgba(247,248,251,.95), rgba(247,248,251, .85),#f7f9fb),  url('/static/img/bg3-min.jpg');">
+			<div class="mdc-layout-grid__inner grid-80-lg" style="height:100%;max-width:900px; ">
+				<div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone all-projects-header" style="z-index:2;">
+					<h2 class="projects-head">All Projects</h2>
+				</div>
+			</div>
+			<div class="mdc-layout-grid__inner grid-80-lg latest-projects-bg" style="">
+				<div class="triangle-left"></div>
+				<div class="triangle-right"></div>
+			</div>
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" id="project1" style="margin-top: 120px !important;">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#e9ebfd30"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image geoview-project-image">
+					<div class="geoview-logo-img" style="z-index:10;">
+						<img src="/static/img/geoview_no_logo.png" alt="GeoView logo" style="">
+					</div>
+					<div class="geoview-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12" style="z-index:10;">
+							<div class="centerDiv">
+								<h2 class="secHead" style="color:#0e6898;text-align:center;margin:0;">GeoView</h2>
+								<p class="portfolio-project-summary" style="color: #143546;" id="">GeoView is a flexible framework for building location-based mapping applications which help users gain situational awareness and enable information-driven decision making.  It provides a quick way to build one-off custom web maps with nearly unlimited customization options.</p>
+
+								<p class="project-buttons">
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="/portfolio/geoview" style="background: rgb(1,98,148); color: white; margin: 1em !important;">Learn More</a>
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="https://geoview-lasvegasnevada-gov.appspot.com" target="_blank" style="margin: 1em !important; background: rgb(1,98,148); color: white;">Go To the App</a>
+								</p>
+								<p class="tech">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>JINJA</a>
+									<a>WEBAPP2</a>
+									<a>GOOGLE MAPS API</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" style="">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#fdded130"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image autogis-project-image show-for-tablet">
+					<div class="autogis-logo-img" style="z-index:10;">
+						<img src="/static/img/autoGIS-new-white_no_logo.png" alt="AutoGIS logo" style="">
+					</div>
+					<div class="autogis-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12"style="z-index:10;">
+							<div class="centerDiv" style="z-index:10;">
+								<h2 class="secHead" style="color:#f5651d;text-align:center;margin:0;">AutoGIS</h2>
+								<p class="portfolio-project-summary" style="color: #143546;" id="">AutoGIS is a cloud-based enterprise level job scheduling and monitoring tool built to manage data processing tasks.  It provides a centralized way to automate workflows, monitor server uptime, and share important updates.</p>
+								<p class="project-buttons">
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="/portfolio/autogis" style="background: #f5651d; color: white; margin: 1em !important;">Learn More</a>
+								</p>
+								<p class="tech" style="color:#f5651d;">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>CLOUD DATASTORE</a>
+									<a>JINJA</a>
+									<a>WEBAPP2</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image hide-for-tablet autogis-project-image" style="">
+					<div class="autogis-logo-img" style="z-index:10;">
+						<img src="/static/img/autoGIS-new-white_no_logo.png" alt="AutoGIS logo" style="">
+					</div>
+					<div class="autogis-logo-bg-img logo-bg-img"></div>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" style="">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#c9e3fc24"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image edis-project-image">
+					<div class="geoview-logo-img" style="z-index:10;">
+						<img src="/static/img/edis_no_logo.png" alt="EDIS logo" style="height:350px;">
+					</div>
+					<div class="edis-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12"style="z-index:10;">
+							<div class="centerDiv" style="z-index:10;">
+								<h2 class="secHead" style="color:#0e6898;text-align:center;margin:0;">E.D.I.S.</h2>
+								<p class="portfolio-project-summary" style="color: #143546;" id="">The Economic Development Information System (EDIS) is a custom mapping application built on the GeoView framework that allows users to view, analyze, and share geographic information valuable for promoting economic development.</p>
+								<p>
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="/portfolio/edis" style="background: rgb(1,98,148); color: white; margin: 1em !important;">Learn More</a>
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="https://geoview-lasvegasnevada-gov.appspot.com/eud" target="_blank" style="margin: 1em !important; background: rgb(1,98,148); color: white;">Go To the App</a>
+								</p>
+								<p class="tech">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>GOOGLE MAPS API</a>
+									<a>JINJA</a>
+									<a>WEBAPP2</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" style="">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#f5cece40"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image smartdisplay-project-image show-for-tablet">
+					<div class="smartdisplay-logo-img" style="z-index:10;">
+						<img src="/static/img/aa-logo-white-thin.png" alt="smart display logo" style="max-height: 250px;max-width: 80vw;">
+					</div>
+					<div class="smartdisplay-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12"style="z-index:10;">
+							<div class="centerDiv" style="z-index:10;">
+								<h2 class="secHead" style="color:black;text-align:center;margin:0;">AWA Smart Display</h2>
+								<p class="portfolio-project-summary" style="color: black;" id="">The AWA Smart Display is a custom dashboard designed to be always on a TV in my home that displays my calendar, time and weather, quote of the day, and the latest news.</p>
+								<p class="project-buttons">
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="/portfolio/smartdisplay" style="background: #717171; color: white; margin: 1em !important;">Learn More</a>
+								</p>
+								<p class="tech" style="color:black;">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>CLOUD DATASTORE</a>
+									<a>JINJA</a>
+									<a>WEBAPP2</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image hide-for-tablet smartdisplay-project-image" style="">
+					<div class="smartdisplay-logo-img" style="z-index:10;">
+						<img src="/static/img/aa-logo-white-thin.png" alt="smart display logo" style="max-height: 250px;max-width: 80vw;">
+					</div>
+					<div class="smartdisplay-logo-bg-img logo-bg-img"></div>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" style="">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#ff572224"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image jt-project-image">
+					<div class="jt-logo-img" style="z-index:10;">
+						<img src="/static/img/jt.png" alt="jt logo" style="height:350px;">
+					</div>
+					<div class="jt-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12"style="z-index:10;">
+							<div class="centerDiv" style="z-index:10;">
+								<h2 class="secHead" style="color:#ff5722;text-align:center;margin:0;">JaymesThompson.net</h2>
+								<p class="portfolio-project-summary" style="color: #143546;" id="">Jaymes Thompson is an independent actor and filmmaker who needed a simple one page website to point potential clientele to.</p>
+								<p>
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="http://jaymesthompson.net" target="_blank" style="margin: 1em !important; background: #ff5722; color: white;">View His Website</a>
+								</p>
+								<p class="tech" style="color:#ff5722;">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>GOOGLE MAPS API</a>
+									<a>JINJA</a>
+									<a>WEBAPP2</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div class="getintouchportfolio">
+		<div class="mdc-layout-grid__cell--span-12">
+			<div class="mdc-layout-grid__inner grid-80-lg" style="height:100%;max-width:900px; ">
+
+			</div>
+		</div>
+	</div>-->
+	<div class="mdc-layout-grid__cell--span-12 portfolio-contact">
+		<div class="mdc-layout-grid__inner grid-50-lg">
+			<div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+				<h3>What's next? <span style="color:#1ce8b5;">You let me know...</span></h3>
+			</div>
+			<div class="mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+				<p style="text-align: center;"><a class="mdc-button mdc-button--raised mdc-ripple-surface--light sendMessageBtn" style="margin:0;" id="" href="/#contactMe">Get In Touch</a></p>
+			</div>
+		</div>
+	</div>
+
+</main>
+{% endblock %} {% block footer%}{% include "./commons/footer.html" %}{% endblock %} {% block javascript %}{% endblock %}

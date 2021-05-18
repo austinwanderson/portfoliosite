@@ -1,0 +1,28 @@
+{% extends "main.html" %} {% block title %}{% endblock %} {% block navbar %}{% include "./commons/navbar.html" %}{% endblock %} {% block content %}
+<main>
+	<div class="mdc-layout-grid--span-12 home-starting-grid">
+		<canvas id="homeCanvas" class="homeCanvas"></canvas>
+		<div class="mdc-layout-grid__inner" id="startingGrid">
+			<div class="mdc-layout-grid__cell--span-12" style="margin: 40px 0;z-index: 2;">
+				<h1 class="blog-title" id="blogPostHeader">{% block blogTitle %}{% endblock %}</h1>
+				<h3 class="blog-subtitle" style="font-size: 1.4em;" id="blogPostSubtitle">{% block blogSubtitle %}{% endblock %}</h3>
+			</div>
+		</div>
+		<div class="mdc-layout-grid__inner grid-50-lg" id="blogPostContent">
+{% block blogContent %}
+
+{% endblock %}
+		</div>
+	</div>
+	<div class="mdc-layout-grid__cell--span-12 portfolio-contact">
+		<div class="mdc-layout-grid__inner grid-50-lg">
+			<div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+				<h3>Like what you read? <span style="color:#1ce8b5;">Let's keep it going.</span></h3>
+			</div>
+			<div class="mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+				<p style="text-align: center;"><a class="mdc-button mdc-button--raised mdc-ripple-surface--light sendMessageBtn" style="margin:0;" id="" href="/contact">Get In Touch</a></p>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %} {% block footer%}{% include "./commons/footer.html" %}{% endblock %} {% block javascript %}{% include "blog/canvas.js.html" %}{% endblock %}

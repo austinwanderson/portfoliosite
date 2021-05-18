@@ -1,0 +1,29 @@
+{% extends "main.html" %} {% block title %}Austin W. Anderson{% endblock %} {% block navbar %}{% include "./commons/navbar.html" %}{% endblock %} {% block content %}
+<main>
+	<div class="mdc-layout-grid--span-12 home-starting-grid thankYouPage">
+		<div class="mdc-layout-grid__inner grid-80-lg">
+			<div class="mdc-layout-grid__cell--span-12">
+				<div class="centerDiv" style="margin-top:45px;text-align:center;">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="250" width="250" x="0px" y="0px" style="margin-top: 9px;" viewBox="0 0 250 250" style="enable-background:new 0 0 250 250;" xml:space="preserve">
+						<style type="text/css">
+							.mt0{fill:none;stroke:#005e8e;stroke-width:12;stroke-miterlimit:10;}
+							.mt1{fill:none;stroke:#005e8e;stroke-width:12;stroke-miterlimit:10;}
+						</style>
+						<circle id="XMLID_1_" class="mt0" cx="125.2" cy="124.7" r="117.6"/>
+						<polyline id="XMLID_4_" class="mt1" points="39.4,205.2 125,124.7 213.3,205.2 "/>
+						<polyline id="XMLID_5_" class="mt1" points="39.4,44.2 83.3,124.7 125.2,84.9 167,124.7 213.3,46.8 "/>
+					</svg>
+				</div>
+			</div>
+			<div class="mdc-layout-grid__cell--span-12">
+				<h2 class="secHead" style="text-align:center;margin:5px;">We'll be in touch!</h2>
+				<p class="aboutMePara transition" style="margin:5px;" id="">Thanks for contacting me, I look forward to getting to know you!</p>
+				<div class="centerDiv" style="margin-bottom: 40px; margin-top:25px;text-align:center;">
+					<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary lightActionBtn centerText actBtn--top2" id="" href="/" style="background: rgb(1,98,148) !important; color: white !important;margin-bottom:10px;">Back to Home</a>
+					<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary lightActionBtn centerText actBtn" id="" href="/blog" style="background: rgb(1,98,148) !important; color: white !important;">Check out the Blog</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %} {% block footer%}{% include "./commons/footer.html" %}{% endblock %} {% block javascript %}{% endblock %}

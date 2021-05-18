@@ -1,0 +1,19 @@
+{% extends "main.html" %} {% block title %}The Blog{% endblock %} {% block navbar %}{% include "./commons/navbar.html" %}{% endblock %} {% block content %}
+<main>
+	<div class="mdc-layout-grid--span-12 home-starting-grid">
+		<canvas id="homeCanvas" class="homeCanvas"></canvas>
+		<div class="mdc-layout-grid__inner" id="startingGrid">
+			<div class="mdc-layout-grid__cell--span-12" style="margin: 40px 0;z-index: 2;">
+				<h1 class="blog-title" style="" id="blogPostHeader">The Blog</h1>
+				<h3 class="blog-subtitle" style="font-size: 1.2em;" id="blogPostSubtitle"></h3>
+			</div>
+		</div>
+		<div id="blogPosts" style="z-index: 1;">
+			<div class="mdc-layout-grid__inner grid-80-lg" id="blogPostContent" style="z-index:10; margin: 24px auto;">
+				
+					
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %} {% block footer%}{% include "./commons/footer.html" %}{% endblock %} {% block javascript %} {% include "blog/canvas.js.html" %} {% include "./blog/blog.js.html" %} {% endblock %}

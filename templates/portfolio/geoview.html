@@ -1,0 +1,66 @@
+{% extends "main.html" %} {% block title %}Portfolio - GeoView{% endblock %} {% block navbar %}{% endblock %} {% block content %}
+{% include "./commons/navbar.html" %}
+<div class="mdc-top-app-bar mdc-top-app-bar--fixed other-page-navbar portfolio-project-navbar" id="" style="">
+	<div class="mdc-top-app-bar__row">
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+			<a class="material-icons mdc-top-app-bar__navigation-icon menu mobile-menu-open-button" style="color:#1a3668;" id="menuBtn">menu</a>
+			<span class="mdc-top-app-bar__title"></span>
+		</section>
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end navbar-btns" role="toolbar" style="padding-right:0;text-align:center;">
+			<a href="/" class="mdc-top-app-bar__action-item" style="color: #1a3668 !important;">Home</a>
+			<a href="/portfolio" class="mdc-top-app-bar__action-item" style="color: #1a3668 !important;">Portfolio</a>
+			<a href="/static/RESUME.pdf" target="_blank" class="mdc-top-app-bar__action-item" style="color: #1a3668 !important;">Resume</a>
+			<a href="/#contactMe" class="mdc-top-app-bar__action-item" style="color: #1a3668 !important;">Contact</a>
+		</section>
+	</div>
+</div>
+
+<main>
+	<div class="mdc-layout-grid--span-12 project-page-header geoview-project">
+    <img src="/static/img/geoview_no_logo.png" height="325">
+  </div>
+
+  <div class="mdc-layout-grid--span-12 home-starting-grid">
+    <div class="mdc-layout-grid__inner grid-90-lg" style="max-width:750px;">
+      <div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone portfolio-post">
+        <h2 class="portfolio-header" id="portfolio-header" style="color: #1353c5;">As the demand for highly custom webmaps grew, we needed to develop a way to quickly create them without giving up on customizability...</h2>
+        <p class="portfolio-paragraph">At the same time, the City of Las Vegas' public interactive map was barely functioning and in dire need of an upgrade.  GeoView was the result of both of these problems.  Initially created as a simple replacement for that interactive webmap, it quickly grew into what it is today: a flexible framework for building location-based mapping applications which help users gain situational awareness and enable information-driven decision making.</p>
+        <p class="portfolio-paragraph">GeoView is built on top of the Google Maps API.  It provides a low cost, feature friendly, and well documented platform to build spatial applications without giving up on the flexibility needed. The first big challenge was figuring out a way to display the data. We house our spatial data using Esri's ArcGIS REST Services API.  Of course this doesn't play nice with the Google Maps API as Esri wants you to use their mapping platforms.  I got around this by creating an event listener every time the map is idle after a move or zoom event and making a call for the data to the ArcGIS API. The data was returned based on whether the feature was located within the currently displayed map's bounds and an optional query.</p>
+        <p class="portfolio-paragraph">This led to an issue: the bigger the display, the bigger the bounds, and therefore the more data that had to be fetched from the API.  This increased loading time dramatically and made it almost unusable on the desktop.  To combat this, the map bounds were divided into a grid of up to 16 panels where a request for data was made to the ArcGIS REST API for each individual panel's bounds. However, this is only necessary for very large datasets (50,000+ features).  For the smaller datasets drawing was rather simple as the Google Maps platform support data coming from a GeoJSON data source.  </p>
+        <p class="portfolio-paragraph">Now that data was drawing, next was figuring out how to provide the full flexibility required for quickly creating these one-off webmaps.  I ended up integrating a template for a JSON configuration file that would take care of all the possible configurations and customization we could possibly need.  I got this idea after coming across a similiar technology called <a href="https://jasonelle.com/" target="_blank">Jasonelle</a> (formally Jasonette).  This application let you create native iOS and Android applications based off of a JSON configuration file.  It's quite powerful and easy to use so I would recommend checking it out.</p>
+        <p class="portfolio-paragraph">The JSON configuration file has worked like a charm.  It made it easy to add additional customization as the project became more and more complex with no issue.  Layers, including how they're drawn, what happens when they're clicked or toggled, and their source are declared in the configuration file.  It's also responsible for aerial overlays, the map's theme, starting location, button positioning and functionality, and so much more.</p>
+        <p class="portfolio-paragraph">Sometimes just editing the configuration file isn't enough customization needed for our complex applications.  GeoView also allows you to define custom CSS styling, HTML elements, and JavaScript functionality right into each new webmap without a hitch. This is doable because GeoView is built using Jinja and Flask, a python templating technology. All it takes to create a new application is to fill in the configuration template, and copy a simple HTML file where you include your custom code.  An application can be created in less than an hour!</p>
+        <p class="portfolio-paragraph">As the GeoView project grew, so did the amount of built in features that it supported.  These features include drawing and measuring tools, optimal feature labeling, autogenerating PDF reports, map sharing capabilities, and so much more.  Powering these features is a suite of custom algorithms built right into the Google Maps API used for the analysis of geospatial data.  If you haven't read my article on the algorithm I created to optimally place a polygon's label, then I recommend you check it out <a href="/portfolio/labelpositioning">here</a>.</p>
+		<p class="portfolio-paragraph">As for the web framework GeoView is built upon, FastAPI was chosen for a few reasons. FastAPI works great with templating engines such as Jinja, is ASGI-based for a fast, asynchronous runtime, has automatic documentation built right in using the OpenAPI standard, and is well-documented and supported. It's been a treat to use and I highly recommend checking it out <a href="https://fastapi.tiangolo.com/">here</a>.</p>
+        <p class="portfolio-paragraph">GeoView has been a massive success.  It's used by thousands to perform their own spatial analysis.  I've already created 4 production applications using the framework with plans to create many more.  I encourage you to check out GeoView <a href="https://geoview-lasvegasnevada-gov.appspot.com/" target="_blank">here</a>. Let's <a href="/contact">get in touch</a> if you would like to learn more about the technology or in need of a custom mapping application yourself.  Check out some of the applications built with GeoView below:</p>
+        <p class="portfolio-paragraph" style="text-align:center;"><a href="/portfolio/edis">GeoView - Economic Development Information System</a></p>
+        <p class="portfolio-paragraph" style="text-align:center;margin-bottom: 100px;"><a href="/portfolio/cip">GeoView - Capital Improvement Projects Viewer</a></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+{% block footer%}{% include "./commons/footer.html" %}{% endblock %}
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var scenesList = [['#portfolio-header','#app-bar', 'scrolled', 375],['#portfolio-header','#app-bar', 'block', 0]];
+	var controller = new ScrollMagic.Controller();
+	var scenes = [];
+
+	for (var i=0;i<scenesList.length;i++) {
+		var newScene = new ScrollMagic.Scene({
+			triggerElement: scenesList[i][0],
+			offset: scenesList[i][3],
+			reverse: i === 0 ? true : false
+		})
+		.setClassToggle(scenesList[i][1], scenesList[i][2])
+		.addTo(controller);
+
+		scenes.push(newScene);
+	}
+});
+</script>
+{% endblock %}

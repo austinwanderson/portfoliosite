@@ -1,0 +1,64 @@
+{% extends "main.html" %} {% block title %}Portfolio - GeoView{% endblock %} {% block navbar %}{% endblock %} {% block content %}
+{% include "./commons/navbar.html" %}
+<div class="mdc-top-app-bar mdc-top-app-bar--fixed other-page-navbar portfolio-project-navbar" id="" style="">
+	<div class="mdc-top-app-bar__row">
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+			<a class="material-icons mdc-top-app-bar__navigation-icon menu mobile-menu-open-button" style="color:black;" id="menuBtn">menu</a>
+			<span class="mdc-top-app-bar__title"></span>
+		</section>
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end navbar-btns" role="toolbar" style="padding-right:0;text-align:center;">
+			<a href="/" class="mdc-top-app-bar__action-item" style="color: black !important;">Home</a>
+			<a href="/portfolio" class="mdc-top-app-bar__action-item" style="color: black !important;">Portfolio</a>
+			<a href="/static/RESUME.pdf" target="_blank" class="mdc-top-app-bar__action-item" style="color: black !important;">Resume</a>
+			<a href="/#contactMe" class="mdc-top-app-bar__action-item" style="color: black !important;">Contact</a>
+		</section>
+	</div>
+</div>
+
+<main>
+	<div class="mdc-layout-grid--span-12 project-page-header smartdisplay-project">
+    <img src="/static/img/aa-logo-white-thin.png" height="250">
+  </div>
+
+  <div class="mdc-layout-grid--span-12 home-starting-grid">
+    <div class="mdc-layout-grid__inner grid-90-lg" style="max-width:750px;">
+      <div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone portfolio-post">
+        <h2 class="portfolio-header" id="portfolio-header" style="color: black;">The AWA Smart Display is a custom dashboard designed to be always on a TV in my home that displays my calendar, time and weather, quote of the day, and the latest news.</h2>
+        <p class="portfolio-paragraph">A comprehensive review of this projects is coming soon! In the meantime check out the following screenshots to see what it looks like:
+
+        <p class="portfolio-paragraph"><a style="cursor:pointer;" href="/static/img/smartdisplay_screenshot_1.jpg" target="_blank"><img src="/static/img/smartdisplay_screenshot_1.jpg" style="width: 100%;border-radius: 8px;margin:0 auto;"></a></p>
+        <p class="portfolio-paragraph"><a style="cursor:pointer;" href="/static/img/smartdisplay_screenshot_3.jpg" target="_blank"><img src="/static/img/smartdisplay_screenshot_3.jpg" style="width: 100%;border-radius: 8px;margin:0 auto;"></a></p>
+
+        <p class="portfolio-paragraph">You can check it out on the following link but in order for it to display the calendar you need to login to a google account and allow microphone access as I was experimenting with creating a voice assistant.  You can try out the voice assistant (Rick Sanchez) by saying "Hey Rick".  He'll say something and then say "hide my dashboard" or "nevermind". Note that it only works on desktop monitors or large screens (atleast 15in) and only with Google Chrome.</p>
+
+        <p class="portfolio-paragraph"><a href="https://awa-smart-display.appspot.com" target="_blank">AWA Smart Display</a></p>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+{% block footer%}{% include "./commons/footer.html" %}{% endblock %}
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var scenesList = [['#portfolio-header','#app-bar', 'scrolled', 375],['#portfolio-header','#app-bar', 'block', 0]];
+	var controller = new ScrollMagic.Controller();
+	var scenes = [];
+
+	for (var i=0;i<scenesList.length;i++) {
+		var newScene = new ScrollMagic.Scene({
+			triggerElement: scenesList[i][0],
+			offset: scenesList[i][3],
+			reverse: i === 0 ? true : false
+		})
+		.setClassToggle(scenesList[i][1], scenesList[i][2])
+		.addTo(controller);
+
+		scenes.push(newScene);
+	}
+});
+</script>
+{% endblock %}

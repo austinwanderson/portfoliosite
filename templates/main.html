@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="msapplication-TileColor" content="#2a64ed">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:image" content="/static/img/aa_link_img.jpg">
+  <meta property="og:description" content="Check out my recent projects, learn more about my development experience, and get in touch!"/>
+  <meta property="og:title" content="Austin Wayne Anderson - Software Developer"/>
+  <meta property="og:site_name" content="Austin Wayne Anderson - Software Developer"/>
+  <meta property="og:url" content="https://austinwayneanderson.com/">
+  <meta property="og:type" content="portfolio"/>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=ngJOoeALOR">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=ngJOoeALOR">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=ngJOoeALOR">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=ngJOoeALOR" color="#2a64ed">
+  <link rel="shortcut icon" href="/favicon-new.ico">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abel|Assistant:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/a.css">
+  <link rel="stylesheet" href="/static/css/animate.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140080299-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140080299-2');
+  </script>
+
+  {% block optional_css %}{% endblock %}
+</head>
+<body>
+<!--<div id="scroll-distance-bar" class="scroll-distance-bar"></div>-->
+<!--<article style="overflow-x: hidden !important;" id="article">-->
+  {% block menu %}{% include "commons/menu.html" %}{% endblock %}
+  <!--<div class="mdc-drawer-app-content">
+
+  </div>-->
+  {% block content %}{% endblock %}
+  {% block footer %}{% include "./commons/footer.html" %}{% endblock %}
+
+
+
+<!--</article>-->
+<script src="https://unpkg.com/material-components-web@0.35.1/dist/material-components-web.min.js"></script>
+<!--<script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>-->
+
+<script type="text/javascript" src="/static/js/mains.js"></script>
+<script type="text/javascript">
+  window.mdc.autoInit();
+</script>
+{% block javascript %}{% endblock %}
+</body>
+</html>

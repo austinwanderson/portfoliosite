@@ -1,0 +1,201 @@
+<script>
+
+var canvas = document.querySelector('#homeCanvas');
+var current_width = window.innerWidth;
+var all_triangles = [];
+var gap_distance = -1;
+var elem = document.getElementById('startingGrid');
+var distance_from_top = getPosition(elem);
+var side_length = Math.floor(Math.random() * 40 + 60);
+var c = canvas.getContext('2d');
+var mouse = {
+	x: undefined,
+	y: undefined
+};
+var colorArray = [
+	'rgb(2,61,117)',
+	'rgb(1,85,143)',
+	'rgb(1,98,148)',
+	'rgb(0,140,172)'
+	//'rgb(5,96,176)'
+]; 
+
+document.addEventListener('scroll', function() {
+	distance_from_top = getPosition(elem) - window.pageYOffset;
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+	canvas.width = window.innerWidth;
+	//canvas.height = window.innerHeight/10*4;
+	canvas.height = document.getElementById('startingGrid').offsetHeight;
+	current_width = canvas.width;
+	fillCanvasTimer();
+	
+});
+
+window.addEventListener('resize', function(event) {
+	if (window.innerWidth !== current_width) {
+		canvas.width = window.innerWidth;
+		current_width = canvas.width;
+		canvas.height = document.getElementById('startingGrid').offsetHeight;		
+		all_triangles = [];		
+		fillCanvas();
+	}	
+});
+
+
+window.addEventListener('mousemove', function(event) {
+	mouse.x = event.x;
+	mouse.y = event.y;
+});
+
+function fillCanvasTimer() {
+	//setTimeout(function() {
+		fillCanvas();
+	//}, 1000);
+}
+
+function getPosition(element) {
+    var yPosition = 0;
+
+    while(element) {
+        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+        element = element.offsetParent;
+    }
+
+    return yPosition;
+}
+
+function fillCanvas() {
+	var done = false;
+	var row_count = 0;
+	var num_of_rows = Math.ceil(canvas.height / (Math.round(pythagoreanTheorem(side_length, side_length/2) + gap_distance)));
+	var up = true;
+	while (!done) {
+		if (row_count % 2 === 0) {
+			up = true;
+		} else {
+			up = false;
+		}
+		all_triangles.push(CreateRow(row_count, up));
+		row_count += 1;
+		if (row_count >= num_of_rows) {
+			done = true;
+			console.log(all_triangles);
+			for (var i=0;i<all_triangles.length;i++) {
+				for (var r=0;r<all_triangles[i].length;r++) {
+					all_triangles[i][r].draw();								
+				}		
+			}
+			animate();
+		}
+	}
+}
+
+function CreateRow(row_number, firstTrianglePointedUp) {
+	var row = [];
+	var done = false;
+	var num_of_col = Math.ceil(canvas.width / (side_length / 2) + 5);
+	var tr_count = 0;
+	var up = firstTrianglePointedUp;
+	while (!done) {
+		var triangle = new Triangle(row_number, up, tr_count);
+		if (up) {
+			up = false;
+		} else {
+			up = true;
+		}
+		//push to row
+		row.push(triangle);
+		//logic to determine if last triangle in row
+		tr_count += 1;
+		if (tr_count >= num_of_col) {
+			done = true;
+			//console.log(all_triangles);
+		}
+	}
+	return row;
+}
+
+function pythagoreanTheorem(a,b) {
+	return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+}
+
+function Triangle(rn, up, trc) {
+	this.coordinates = [];
+	this.isUp = up;
+	this.ly = 0;
+	this.hy = 0;
+	this.lx = 0;
+	this.hx = 0;
+	this.changed = false;
+	//this.opacity = 0;
+	this.fillColorStr = colorArray[Math.floor(Math.random() * colorArray.length)];
+	//this.fillColorStr = 'rgba(' + this.fillColor[0] + ',' + this.fillColor[1] + ',' + this.fillColor[2] + ',0)';
+	this.strokeColor = '#C4D7ED';
+	this.lineWidth = 10;
+	this.draw = function () {
+		this.coordinates = [];
+		var XCoord = (gap_distance * trc) + (side_length/2 * trc);
+		if (!up) {
+			XCoord -= side_length / 2;
+			this.lx = XCoord;
+		}		
+		var YCoord = gap_distance + (gap_distance * rn) + (Math.round(pythagoreanTheorem(side_length, side_length/2)) * rn);
+		this.ly = YCoord;
+		c.beginPath();
+		c.moveTo(XCoord, YCoord);
+		this.coordinates.push([XCoord,YCoord]);
+		if (up) {
+			YCoord += Math.round(pythagoreanTheorem(side_length, side_length/2));
+			this.hy = YCoord;
+			XCoord += side_length/2;
+			this.hx = XCoord;
+			c.lineTo(XCoord, YCoord);
+			this.coordinates.push([XCoord,YCoord]);
+			XCoord -= side_length;
+			this.lx = XCoord;
+			c.lineTo(XCoord,YCoord);
+			this.coordinates.push([XCoord,YCoord]);
+
+				
+		} else {
+			XCoord += side_length;
+			this.hx = XCoord;
+			c.lineTo(XCoord, YCoord);
+			this.coordinates.push([XCoord,YCoord]);
+			XCoord -= side_length/2;
+			YCoord += Math.round(pythagoreanTheorem(side_length, side_length/2));
+			this.hy = YCoord;
+			c.lineTo(XCoord, YCoord);
+			this.coordinates.push([XCoord,YCoord]);
+
+		}
+		c.fillStyle = this.fillColorStr;
+		c.fill();	
+	};
+	
+	this.update = function () {
+		if (mouse.x >= this.lx && mouse.x <= this.hx && (mouse.y - distance_from_top) >= this.ly && (mouse.y - distance_from_top) <= this.hy) {
+			if (!this.changed) {
+				this.changed = true;
+				this.fillColorStr = colorArray[Math.floor(Math.random() * colorArray.length)];
+			}			
+		} else {
+			this.changed = false;
+		}		
+	};
+}
+
+function animate() {
+	requestAnimationFrame(animate);	
+	c.clearRect(0,0,window.innerWidth,window.innerHeight);
+	for (var i=0;i<all_triangles.length;i++) {
+		for (var r=0;r<all_triangles[i].length;r++) {
+			all_triangles[i][r].update();
+			all_triangles[i][r].draw();		
+		}		
+	}
+}
+
+</script>

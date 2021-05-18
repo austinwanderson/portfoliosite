@@ -1,0 +1,45 @@
+{% extends "commons/blog_template.html" %}{% block title %}Temporary Title{% endblock %}
+{% block blogTitle %}Here's the blog title{% endblock %}
+{% block blogSubtitle %}Here's the blog subtitle{% endblock %}
+{% block blogContent %}
+			<div class="mdc-layout-grid__cell--span-12">
+				<h2 class="secHead" style="color: black;">From the Start</h2>
+				<p class="blogParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat tristique egestas. Suspendisse vel finibus nibh. Duis vitae pulvinar lacus. Sed blandit urna scelerisque, commodo felis vel, ornare lectus. Duis posuere vestibulum erat at ultrices. Sed nec dui molestie, tincidunt magna id, tempor ex. Quisque pharetra posuere mattis. Morbi enim mauris, luctus nec risus ac, aliquam pellentesque nisi. Sed scelerisque pharetra tortor, id porta arcu tristique at. Nulla tincidunt luctus est. Curabitur egestas nulla at elementum euismod. Vivamus tempus egestas diam, quis commodo sem maximus quis. Vivamus a bibendum neque. Sed sagittis malesuada lacus ut ultricies.</p>
+				<div class="blogImgDiv">
+					<img src="https://github.com/aanderson0329/automaGIS-Logging/raw/master/bg.jpg" alt="blogImg">
+				</div>
+				<h3 class="secSubHead" style="color: black;">Subsection Here</h3>
+				<p class="blogParagraph">Aliquam aliquet convallis diam, quis sollicitudin tellus <i>Test italics here</i> mollis in. <b>This is Bold</b> Duis tincidunt, nisi non commodo pretium, purus neque efficitur ipsum, eu auctor quam tellus in quam. Quisque lobortis lorem vel turpis accumsan venenatis. Aenean vulputate augue quis leo malesuada imperdiet. Morbi condimentum non dui ut rhoncus. Sed sapien elit, consequat sed turpis a, commodo ultrices neque. Maecenas sagittis ex ante, et feugiat felis accumsan quis. Fusce in elit ornare, bibendum nibh vehicula, elementum ligula. Cras tempor ut quam pellentesque tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+				<h2 class="secHead" style="color: black;">Another Section</h2>
+				<p class="blogParagraph">Mauris tellus eros, vulputate <span class="inlineCode">(x + y) / 2 * sideLength</span> volutpat tincidunt sapien. Nulla elit felis, aliquet vitae dignissim eget, ultrices fermentum diam. Ut non ligula tincidunt, tempus erat vestibulum, tempor nisi. Mauris in velit eget diam auctor condimentum vel non enim. Vivamus in maximus ex. Integer pellentesque a mauris nec condimentum. Donec consectetur accumsan ligula, sed consequat risus euismod id. Curabitur in placerat purus. Praesent nec lorem massa. Suspendisse auctor vulputate lacus, sed placerat odio sagittis sit amet. In hac habitasse platea dictumst. Pellentesque tempor magna ut magna ultrices, quis pretium erat aliquam. Proin tempor, orci eget egestas tempor, arcu orci tincidunt tortor, id mattis urna purus at nisl. Ut tincidunt condimentum sem sed luctus.</p>
+				<pre class="blogPreCode">
+				<code class="blogCode">
+function CreateRow(row_number, firstTrianglePointedUp) {
+	var row = [];
+	var done = false;
+	var num_of_col = Math.ceil(canvas.width / (side_length / 2) + 5);
+	var tr_count = 0;
+	var up = firstTrianglePointedUp;
+	while (!done) {
+		var triangle = new Triangle(row_number, up, tr_count);
+		if (up) {
+			up = false;
+		} else {
+			up = true;
+		}
+		//push to row
+		row.push(triangle);
+		//logic to determine if last triangle in row
+		tr_count += 1;
+		if (tr_count >= num_of_col) {
+			done = true;
+			//console.log(all_triangles);
+		}
+	}
+	return row;
+}
+				</code>
+				</pre>
+				<p class="blogParagraph">Mauris vel justo sapien. Sed vel risus turpis. Nam non nisl dapibus neque lacinia vulputate. Pellentesque elementum est in enim sagittis dapibus. Proin at lacinia nisl, ut efficitur metus. Vivamus commodo diam ut nulla auctor ultricies. Integer venenatis egestas turpis, nec elementum arcu.</p>
+			</div>
+{% endblock %}

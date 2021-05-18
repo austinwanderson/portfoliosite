@@ -1,0 +1,32 @@
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		
+		var xhttp = new XMLHttpRequest();
+		var blogHtml = "";
+		xhttp.onreadystatechange = function() {
+			if (this.readyState === 4 && this.status === 200) {
+				var blogs = JSON.parse(this.responseText);
+				blogHtml += '<div class="mdc-layout-grid__inner grid-80-lg" id="blogPostContent" style="z-index:10; margin: 24px auto;">';
+				for (var i=0;i<blogs.length;i++) {
+					blogHtml += '<div class="mdc-layout-grid__cell--span-4" id=" "><div class="mdc-card"><div class="mdc-card__media mdc-card__media--16-9 blog-image"><div class="mdc-card__media-content blog-image-div" style="background-image: url(';
+					blogHtml += blogs[i].imgUrl;
+					blogHtml += ');"></div></div><div class="blog-content" style="padding: 8px;"><h4>';
+					blogHtml += blogs[i].title;
+					blogHtml += '</h4><h6>';
+					blogHtml += blogs[i].subtitle;
+					blogHtml += '</h6><p>';
+					blogHtml += blogs[i].desc;
+					blogHtml += '</p></div><div class="mdc-card__actions blog-actions"><div class="mdc-card__action-buttons"><a href="';
+					blogHtml += '/blog?y=' + blogs[i].year + '&m=' + blogs[i].month + '&d=' + blogs[i].day + '"';
+					blogHtml += ' class="mdc-button mdc-card__action mdc-card__action--button">Read Story</a></div><div class="mdc-card__action-icons"><i class="material-icons mdc-card__action mdc-card__action--icon" tabindex="0" role="button" title="Copy Link">share</i></div></div></div></div>';
+					//console.log("blog found");
+				}
+				blogHtml += '</div>';				
+				document.getElementById('blogPosts').innerHTML = blogHtml;
+			}
+		};
+		xhttp.open('GET', 'https://raw.githubusercontent.com/aanderson0329/automaGIS-Logging/master/blogPosts.json?id=' + Math.random());
+		xhttp.send();
+		
+	});
+</script>

@@ -1,0 +1,60 @@
+{% extends "main.html" %} {% block title %}Portfolio - AutoGIS{% endblock %} {% block navbar %}{% endblock %} {% block content %}
+{% include "./commons/navbar.html" %}
+<div class="mdc-top-app-bar mdc-top-app-bar--fixed other-page-navbar" id="" style="z-index: 49;background: none !important;position: absolute !important;">
+	<div class="mdc-top-app-bar__row">
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+			<a class="material-icons mdc-top-app-bar__navigation-icon menu" id="menuBtn">menu</a>
+			<span class="mdc-top-app-bar__title"></span>
+		</section>
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end navbar-btns" role="toolbar" style="padding-right:0;text-align:center;">
+			<a href="/" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Home</a>
+			<a href="/portfolio" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Portfolio</a>
+			<a href="/static/RESUME.pdf" target="_blank" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Resume</a>
+			<a href="/#contactMe" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Contact</a>
+		</section>
+	</div>
+</div>
+
+<main>
+	<div class="mdc-layout-grid--span-12 project-page-header autogis-project">
+    <img src="/static/img/autoGIS-new-white_no_logo.png" style="max-width: 80%;max-height: 125px;height: unset;">
+  </div>
+
+  <div class="mdc-layout-grid--span-12 home-starting-grid">
+    <div class="mdc-layout-grid__inner grid-80-lg" style="max-width:750px;">
+      <div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone portfolio-post">
+        <h2 class="portfolio-header" id="portfolio-header" style="color: #f5651d;">Running  scripts to process GIS data updates became more and more of a hassle as demand quickly grew.  There needed to be a way to automate these tasks while managing users and workflows...</h2>
+        <p class="portfolio-paragraph">Las Vegas is quickly becoming one of the nation's largest innovation hubs.  Having extensive partnerships with NTT Data, Cisco, and a multitude of self-driving startups, it is becoming the testing ground for smart city initiatives.  Technology initiatives like this brings big data, and updating, processing, and monitoring that data started to become a bottleneck for the GIS team. This is why I created AutoGIS.  AutoGIS is a cloud-based enterprise level job scheduling and monitoring tool built to manage data processing tasks.  It provides a centralized way to automate workflows, manage user data, monitor server uptime, and share important updates.</p>
+				<p class="portfolio-paragraph">AutoGIS provides a host of features to manage data processing workflows.  First and foremost, it automates repetitive processing tasks by scheduling them based on a set time frame.  Once a task is executed, statistics such as it's execution time, return code, and log data are sent to the cloud to provide a full searchable history of all executed jobs.</p>
+				<p class="portfolio-paragraph">To fully automate our processes, specific workflows can be configured based off the results of an executed task. For example, when a task requires that another task be successfully executed before running, you can set a rule to schedule said task after the execution of the required task, but only if it executes without fail.  If it does fail, you can schedule a different task to mitigate the failure, or set up an alert. </p>
+				<p class="portfolio-paragraph">An alert is how AutoGIS keeps users and customers informed about important updates.  Just like how tasks can be daisy chained to create specific workflows, alerts can be triggered based off a task result as well.  For example, when a task successfully executes, you can set up an alert to automatically send an email and/or a text to those who rely on the data.</p>
+				<p class="portfolio-paragraph">AutoGIS has been a huge success so far.  We haven't publicly made this available to other GIS professionals yet, but within our group it has already scheduled and executed over 17,000 processing tasks in less than 9 months.  If you take each task and assume just 5 minutes to manually find the script, run it, then check to validate it executed properly, and send an email to a coworker to let them know it finished executing properly, AutoGIS has already saved us over 1400 hours worth of time!  Once we expand this out to other users and data processing updates become more and more of a hassle, I'm sure that number will rise exponentially!</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+{% block footer%}{% include "./commons/footer.html" %}{% endblock %}
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var scenesList = [['#portfolio-header','#app-bar', 'scrolled', 375],['#portfolio-header','#app-bar', 'block', 0]];
+	var controller = new ScrollMagic.Controller();
+	var scenes = [];
+
+	for (var i=0;i<scenesList.length;i++) {
+		var newScene = new ScrollMagic.Scene({
+			triggerElement: scenesList[i][0],
+			offset: scenesList[i][3],
+			reverse: i === 0 ? true : false
+		})
+		.setClassToggle(scenesList[i][1], scenesList[i][2])
+		.addTo(controller);
+
+		scenes.push(newScene);
+	}
+});
+</script>
+{% endblock %}

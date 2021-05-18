@@ -1,0 +1,342 @@
+{% extends "main.html" %}{% block title %}Austin W. Anderson{% endblock %}
+{% block navbar %}{% endblock %}
+{% block content %}
+{% include "./commons/navbar.html" %}
+<div class="mdc-top-app-bar mdc-top-app-bar--fixed other-page-navbar" id="" style="z-index: 4;background: none !important;position: fixed !important;">
+	<div class="mdc-top-app-bar__row">
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+			<a class="material-icons mdc-top-app-bar__navigation-icon menu mobile-menu-open-button" id="menuBtn">menu</a>
+			<span class="mdc-top-app-bar__title"></span>
+		</section>
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end navbar-btns" role="toolbar" style="padding-right:0;text-align:center;">
+			<a href="/" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Home</a>
+			<a href="/portfolio" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Portfolio</a>
+			<a href="/static/RESUME.pdf" target="_blank" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Resume</a>
+			<a href="/#contactMe" class="mdc-top-app-bar__action-item" style="color: #ffffff !important;">Contact</a>
+		</section>
+	</div>
+</div>
+<main class="main-content" id="main-content">
+	<!--<div class="mdc-top-app-bar--fixed-adjust">-->
+	<div class="mdc-layout-grid__inner grid-100-lg startingGrid" id="startingGrid" style="position:fixed;height:100vh;width:100vw;z-index:3;">
+		<div class="mdc-layout-grid__cell--span-12 centerDiv centerText" id="homeLogo" style="width: 100%;position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);">
+			<div class="home-logo" style="">
+				<img src="/static/img/aa-logo-green-thin.png" style="">
+			</div>
+		<!--</div>
+		<div class="mdc-layout-grid__cell--span-12 centerDiv centerText">-->
+			<h1 class="home-title" id="homeTitle">Austin Anderson</h1>
+			<h3 class="home-subtitle" id="homeSubtitle" style="">Full Stack Developer</h3>
+			<div class="centerDiv" style="margin-bottom: 80px; margin-top:35px;">
+				<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary lightActionBtn centerText actBtn--top seeMyWorkBtn" id="seeMyWorkBtn" href="/portfolio">See My Work</a>
+				<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary lightActionBtn centerText getInTouchBtn" id="getInTouchBtn" href="/#contactMe">Get In Touch</a>
+			</div>
+		</div>
+	</div>
+	<div class="mdc-layout-grid--span-12 home-starting-grid" style="margin-top:90vh;z-index:5;">
+		<div class="project-transition-triangle" style=""></div>
+		<div class="mdc-layout-grid__cell--span-12 portfolio-container geoview">
+
+			<div class="mdc-layout-grid__inner grid-80-lg" style="height:100%;max-width:900px; ">
+				<div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone" style="z-index:2;margin-top:20px;">
+					<h2 class="projects-head">Latest Projects</h2>
+				</div>
+			</div>
+			<div class="mdc-layout-grid__inner grid-80-lg latest-projects-bg" style="">
+				<div class="triangle-left"></div>
+				<div class="triangle-right"></div>
+			</div>
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" id="project1" style="margin-top: 120px !important;">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#e9ebfd30"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image geoview-project-image">
+					<div class="geoview-logo-img" style="z-index:10;">
+						<img src="/static/img/geoview_no_logo.png" alt="GeoView logo" style="">
+					</div>
+					<div class="geoview-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12" style="z-index:10;">
+							<div class="centerDiv">
+								<h2 class="secHead" style="color:#0e6898;text-align:center;margin:0;">GeoView</h2>
+								<p class="portfolio-project-summary" style="color: #143546;" id="">GeoView is a flexible framework for building location-based mapping applications which help users gain situational awareness and enable information-driven decision making.  It provides a quick way to build one-off custom web maps with nearly unlimited customization options.</p>
+
+								<p class="project-buttons">
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="/portfolio/geoview" style="background: rgb(1,98,148); color: white; margin: 1em !important;">Learn More</a>
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="https://geoview-lasvegasnevada-gov.appspot.com" target="_blank" style="margin: 1em !important; background: rgb(1,98,148); color: white;">Go To the App</a>
+								</p>
+								<p class="tech">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>JINJA</a>
+									<a>FASTAPI</a>
+									<a>GOOGLE MAPS API</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" style="">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#fdded130"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image autogis-project-image show-for-tablet">
+					<div class="autogis-logo-img" style="z-index:10;">
+						<img src="/static/img/autoGIS-new-white_no_logo.png" alt="AutoGIS logo" style="">
+					</div>
+					<div class="autogis-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12"style="z-index:10;">
+							<div class="centerDiv" style="z-index:10;">
+								<h2 class="secHead" style="color:#f5651d;text-align:center;margin:0;">AutoGIS</h2>
+								<p class="portfolio-project-summary" style="color: #143546;" id="">AutoGIS is a cloud-based enterprise level job scheduling and monitoring tool built to manage data processing tasks.  It provides a centralized way to automate workflows, monitor server uptime, and share important updates.</p>
+								<p class="project-buttons">
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="/portfolio/autogis" style="background: #f5651d; color: white; margin: 1em !important;">Learn More</a>
+								</p>
+								<p class="tech" style="color:#f5651d;">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>CLOUD DATASTORE</a>
+									<a>JINJA</a>
+									<a>WEBAPP2</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image hide-for-tablet autogis-project-image" style="">
+					<div class="autogis-logo-img" style="z-index:10;">
+						<img src="/static/img/autoGIS-new-white_no_logo.png" alt="AutoGIS logo" style="">
+					</div>
+					<div class="autogis-logo-bg-img logo-bg-img"></div>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-80-lg project-card" style="">
+				<div class="" style="position:absolute;">
+					<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<path id="" d="m8.5,691.4375l229.5,-680.4375l437,-1l-227,681l-439.5,0.4375z" stroke-width="0" stroke="#000" fill="#c9e3fc24"/>
+						</g>
+					</svg>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-image edis-project-image">
+					<div class="geoview-logo-img" style="z-index:10;">
+						<img src="/static/img/edis_no_logo.png" alt="EDIS logo" style="height:350px;">
+					</div>
+					<div class="edis-logo-bg-img logo-bg-img"></div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone portfolio-project-details" style="">
+					<div class="mdc-layout-grid__inner centerDiv centerText" style="width:100%;">
+						<div class="mdc-layout-grid__cell--span-12"style="z-index:10;">
+							<div class="centerDiv" style="z-index:10;">
+								<h2 class="secHead" style="color:#0e6898;text-align:center;margin:0;">E.D.I.S.</h2>
+								<p class="portfolio-project-summary" style="color: #143546;" id="">The Economic Development Information System (EDIS) is a custom mapping application built on the GeoView framework that allows users to view, analyze, and share geographic information valuable for promoting economic development.</p>
+								<p>
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="/portfolio/edis" style="background: rgb(1,98,148); color: white; margin: 1em !important;">Learn More</a>
+									<a class="mdc-button mdc-button--raised mdc-ripple-surface--primary centerText" id="" href="https://geoview-lasvegasnevada-gov.appspot.com/eud" target="_blank" style="margin: 1em !important; background: rgb(1,98,148); color: white;">Go To the App</a>
+								</p>
+								<p class="tech">
+									<a>JAVASCRIPT</a>
+									<a>PYTHON</a>
+									<a>GCP</a>
+									<a>APP ENGINE</a>
+									<a>GOOGLE MAPS API</a>
+									<a>JINJA</a>
+									<a>WEBAPP2</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-80-lg">
+				<div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
+					<div class="seeAllProjects">
+						<p><a href="/portfolio">See All Projects</a></p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="mdc-layout-grid__cell--span-12 centerDiv aboutMe" style="">
+			<!--<div class="svg-wave" style="width: 100%;transform: translateY(-5px) rotate(180deg);">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 3600 248">
+					<path d="M3601,31.227S2736.31,201.97,1661,72.2C547.345-62.2,0,32.227,0,32.227V343H3602Z" fill="#f7f9fb"></path>
+				</svg>
+			</div>-->
+			<div class="highlights-transition-triangle" style=""></div>
+
+			<div class="mdc-layout-grid__inner grid-90-lg" style="height:100%;max-width:900px;">
+				<div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone" style="z-index:2;" id="highlights">
+					<h2 class="experience-head">Highlights</h2>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-90-lg" style="margin-top:50px;max-width:1200px;">
+				<div class="mdc-layout-grid__cell--span-5-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+					<ul class="highlights-list">
+						<li>4+ years of professional development experience at one of the most prominent IT departments in the Las Vegas valley.</li>
+						<li>Developed cloud-based enterprise level automation software for data processing tasks saving thousands of dollars in software costs and employee time.</li>
+						<li>Created a framework for building custom mapping applications built around a mobile friendly user interface.  This framework was used to create custom workflows for the City of Las Vegas' city council, economic and urban development team, and planning department.</li>
+					</ul>
+				</div>
+				<div class="mdc-layout-grid__cell--span-7-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone highlights-image">
+					<div class="highlights-image">
+						<object data="/static/img/software.svg" type="image/svg+xml" style="max-width:100%;">
+						</object>
+					</div>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-90-lg" style="margin-top:30px;margin-bottom: 50px;">
+				<div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone" style="padding-bottom: 50px;">
+					<div class="seeAllProjects" style="margin: 0;">
+						<p style="color:#023d75;"><a style="background: white;" href="/static/RESUME.pdf" target="_blank">Download Resume</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__inner grid-90-lg" style="margin-top:50px;max-width:1200px;">
+
+			</div>
+			<div class="about-transition-triangle">
+
+			</div>
+		</div>
+		<div class="mdc-layout-grid__cell--span-12 centerDiv" style="padding-bottom: 70px;background:white;">
+
+			<div class="mdc-layout-grid__inner grid-90-lg" id="getToKnowMe" style="padding-top:80px;">
+				<div class="mdc-layout-grid__cell--span-12 centerDiv" style="padding-bottom:30px;width: 100%;max-width: 1200px;margin: 0 auto;">
+				<table class="about-me-table">
+					<tr class="phone-only">
+						<td style="padding: 0 0 20px 0;">
+							<div class="" style="max-width:550px;">
+								<div class="" style="">
+									<div class="mdc-layout-grid__inner grid-80-lg get-to-know-me-bg" style="">
+										<div class="triangle-left" style="border-color: transparent transparent transparent white"></div>
+										<div class="triangle-right" style="border-color: transparent white transparent transparent;"></div>
+									</div>
+								</div>
+								<div class="" style="z-index:2;margin:20px auto;position:relative !important;">
+									<h2 class="about-me-head" id="aboutMe">Get To Know Me</h2>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="phone-only">
+						<td style="padding: 0">
+							<div class="" style="">
+								<div class="aboutMeImage">
+									<img src="/static/img/portrait3.jpg" alt="portrait">
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="phone-only">
+						<td style="padding: 20px 0 0 0;">
+							<div class="" style="max-width:550px;">
+								<p class="aboutmeparagraph">Hey, I'm Austin, and I'm a developer based in Las Vegas, Nevada. I've done all sorts of projects like creating cloud based automation software, designing websites, and developing some pretty cool mapping applications.  Currently I'm employed with the City of Las Vegas information technologies team but I'm always on the lookout for more challenges and opportunities. Please feel free to contact me if you're interested in creating a project, looking for long term help, or just want to talk code. I look forward to getting to know you!</p>
+							</div>
+						</td>
+					</tr>
+					<tr class="desktop-only">
+						<td style="padding: 40px 40px 40px 0;">
+							<div class="" style="max-width:550px;">
+								<div class="" style="">
+									<div class="mdc-layout-grid__inner grid-80-lg" style="z-index: 1; position: absolute;max-width: 400px;height: 150px;background: linear-gradient(to bottom right, #78ffd6, #9cefff);transform: translate(60px, -40px);">
+										<div class="triangle-left" style="border-color: transparent transparent transparent white"></div>
+										<div class="triangle-right" style="border-color: transparent white transparent transparent;"></div>
+									</div>
+									<div class="" style="z-index:2;margin:20px auto;position:relative;" id="">
+										<h2 class="about-me-head">Get To Know Me</h2>
+									</div>
+								</div>
+								<p class="aboutmeparagraph">Hey, I'm Austin, and I'm a developer based in Las Vegas, Nevada. I've done all sorts of projects like creating cloud based automation software, designing websites, and developing some pretty cool mapping applications.  Currently I'm employed with the City of Las Vegas' information technologies team but I'm always on the lookout for more challenges and opportunities. Please feel free to contact me if you're interested in creating a project, looking for long term help, or just want to talk code. I look forward to getting to know you!</p>
+							</div>
+						</td>
+						<td style="padding: 40px 0 40px 40px;">
+							<div class="" style="">
+								<div class="aboutMeImage">
+									<img src="/static/img/portrait3.jpg" alt="portrait">
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="mdc-layout-grid__cell--span-12 centerDiv aboutMe" style="background:linear-gradient(45deg, rgba(5,117,230,1), rgb(15, 50, 183));">
+			<div class="contact-transition-triangle"></div>
+
+			<div class="mdc-layout-grid__inner grid-80-lg" style="height:100%;max-width:900px;" id="">
+				<div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone" style="z-index:2;margin-bottom:60px;" id="contactMe">
+					<h2 class="experience-head" style="margin: 80px 0 0 0;">Let's Chat</h2>
+					<p class="contactDivP">Fill out the form below and I'll respond within 24 hours.</p>
+				</div>
+			</div>
+
+			<div class="mdc-layout-grid__cell--span-12">
+				<div class="mdc-layout-grid__inner grid-50-lg contactForm" id="contactForm">
+					<form action="https://formspree.io/aanderson0329@gmail.com" method="POST" id="contactMe" style="width:inherit;">
+						<div class="mdc-layout-grid__cell--span-12">
+							<label class="mdc-text-field mdc-text-field--filled" id="nameField" style="width: 100%;margin: 0;background: none;margin-bottom:12px;">
+								<span class="mdc-text-field__ripple"></span>
+								<span class="mdc-floating-label" id="yourName">Your Name</span>
+								<input class="mdc-text-field__input" type="text" name="clientName" aria-labelledby="yourName">
+								<span class="mdc-line-ripple" style="border:none !important;"></span>
+							  </label>
+						</div>
+						<div class="mdc-layout-grid__cell--span-12">
+							<label class="mdc-text-field mdc-text-field--filled" id="emailField" style="width: 100%;margin: 0;background: none;margin-bottom:12px;">
+								<span class="mdc-text-field__ripple"></span>
+								<span class="mdc-floating-label" id="yourEmail">Your Email</span>
+								<input class="mdc-text-field__input" type="text" name="clientEmail" aria-labelledby="yourEmail">
+								<span class="mdc-line-ripple" style="border:none !important;"></span>
+							  </label>
+						</div>
+						<div class="mdc-layout-grid__cell--span-12">
+							<label class="mdc-text-field mdc-text-field--filled" id="messageField" style="width: 100%;margin: 0;background: none;margin-bottom:12px;">
+								<span class="mdc-text-field__ripple"></span>
+								<span class="mdc-floating-label" id="yourMessage">How Can I Help?</span>
+								<input class="mdc-text-field__input" type="text" name="clientMessage" aria-labelledby="yourMessage">
+								<span class="mdc-line-ripple" style="border:none !important;"></span>
+							  </label>
+						</div>
+						<div class="mdc-layout-grid__cell--span-12" style="margin-top: 20px;">
+							<div class="seeAllProjects" style="margin: 45px 0;">
+								<p style="color:#023d75;"><button style="background: white;" href="">Send Message</button></p>
+							</div>
+						</div>
+						<input type="hidden" name="_next" value="/thanks" />
+						<input type="text" name="_gotcha" style="display:none" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %} {% block javascript %}{% include "homepage/index.js.html" %}{% endblock %}

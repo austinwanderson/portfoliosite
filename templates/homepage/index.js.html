@@ -1,0 +1,37 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  var scenesList = [
+    ['#project1','#app-bar', 'scrolled', 0],
+    ['#blog1', '#blog1','fade-in', -200],
+    ['#blog2', '#blog2','fade-in', -200],
+    ['#blog3', '#blog3','fade-in', -200],
+    ['#contactDiv', '#contactHeader','fade-up', 0],
+    ['#contactDiv', '#contactForm','fade-up', 0]
+  ];
+  var controller = new ScrollMagic.Controller();
+  var scenes = [];
+
+  for (var i=0;i<scenesList.length;i++) {
+    var newScene = new ScrollMagic.Scene({
+      triggerElement: scenesList[i][0],
+      offset: scenesList[i][3],
+      reverse: i === 0 ? true : false
+    })
+    .setClassToggle(scenesList[i][1], scenesList[i][2])
+    .addTo(controller);
+
+    scenes.push(newScene);
+  }
+});
+
+window.addEventListener("resize", function(event) {
+  //document.getElementById('homeLogo').style.margin = "0 auto";
+});
+const buttonRipple2 = new mdc.ripple.MDCRipple(document.querySelector('#seeMyWorkBtn'));
+const buttonRipple3 = new mdc.ripple.MDCRipple(document.querySelector('#getInTouchBtn'));
+const textField = new mdc.textField.MDCTextField(document.querySelector('#nameField'));
+const textField2 = new mdc.textField.MDCTextField(document.querySelector('#emailField'));
+const textField3 = new mdc.textField.MDCTextField(document.querySelector('#messageField'));
+</script>

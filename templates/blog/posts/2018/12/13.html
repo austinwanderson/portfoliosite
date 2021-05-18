@@ -1,0 +1,34 @@
+{% extends "commons/blog_template.html" %}{% block title %}GeoView - An Inside Look{% endblock %}
+{% block blogTitle %}GeoView - An Inside Look{% endblock %}
+{% block blogSubtitle %}By: Austin Anderson{% endblock %}
+{% block blogContent %}
+			<div class="mdc-layout-grid__cell--span-12">		
+				<!--<div class="blogImgDiv" style="margin-top: 1em;">
+					<img src="/static/img/geoview-logo.png" alt="blogImg" style="max-width:400px; margin: 0 auto;">
+				</div>-->
+				<h2 class="secHead" style="color: black;">The Need for GeoView</h2>
+				<p class="blogParagraph">Working in the Office of Geographic Information Systems at the City of Las Vegas, there was a constant need for one-off mapping applications for various workflows throughout the city.  Creating these applications became very inefficient as each application itself was built from scratch, needing a custom user interface and functionality. A simple one of these maps could take over a month to develop.</p>
+				<p class="blogParagraph">I was initially tasked with developing a new public interactive web map for the city, as the one we currently had was outdated and on its last limb.  About midway through development I came across this platform called <span style="border-bottom:2px solid #1ce8b5;padding-bottom:0px;line-height:1.4em;"><a href="https://jasonette.com/" target="_blank" style="display: inline-block; text-decoration: none; color: #000;">Jasonette</a></span>.  What's great about Jasonette is it allows you to create a native mobile application based off of a JSON configuration file.  This gave me an idea: what if I developed the new interactive webmap into a platform where a new mapping application could be built simply by creating a configuration file?</p>
+				<p class="blogParagraph">Thus, GeoView was born: a platform for quickly developing custom mapping applications through a uniform user interface that works great on all devices.</p>
+				
+				<h2 class="secHead" style="color: black;">How it's built</h2>
+				
+				<p class="blogParagraph">GeoView is ran using Google Cloud Platform's App Engine.  App Engine is a great way to develop web applications that are quick and highly scalable with minimal operational overhead.  This project uses a Python templating library called Flask to load the main template page which contains the base user interface elements, CSS, images, and javascript files.  A new GeoView custom mapping application is built on top of this main template, adding the ability to define your own CSS, JavaScript, and UI elements if need be.  For most mapping applications, however, the only thing you need is a configuration file.</p>
+				
+				<p class="blogParagraph">The configuration file is a JSON file that determines everything about the web app.  With it you define what layers are drawn, where the data comes from, and how it's displayed.  You also define all the map options, like the starting location, zoom, basemap, what map overlays and aerials are available, and so on.  Not to mention, the configuration file is where you define how the map's user interface is created, including custom buttons and functionality, extra tabs, theme, etc.  There's really no limit to the amount of customization available on GeoView.  To learn more about all the options available, take a look at the  <span style="border-bottom:2px solid #1ce8b5;padding-bottom:0px;line-height:1.4em;"><a href="https://geoview-lasvegasnevada-gov.appspot.com/documentation" target="_blank" style="display: inline-block; text-decoration: none; color: #000;">documentation</a></span>.</p>
+				
+				<h2 class="secHead" style="color: black;">Results speak for itself</h2>
+				
+				<p class="blogParagraph">GeoView makes it so easy to quickly develop custom web maps.  One off web maps that originally took weeks or sometimes months to fully develop now takes hours or a few days, depending on the complexity of the application.  A simple data viewer and identifier can be fully developed in less than an afternoon.  This saves the City of Las Vegas' GIS team a lot of time and money.  Plus, with GeoView developed in-house, new features can be developed as the need for it comes up.</p>
+				
+				<p class="blogParagraph">You can check out the City of Las Vegas interactive webmap here:</p>
+				
+				<p class="blogParagraph"><span style="border-bottom:2px solid #1ce8b5;padding-bottom:0px;line-height:1.4em;"><a href="https://geoview-lasvegasnevada-gov.appspot.com/" target="_blank" style="display: inline-block; text-decoration: none; color: #000;">GeoView Interactive Webmap - City of Las Vegas</a></span></p>
+				
+				
+				
+				
+				
+			</div>
+				
+{% endblock %}

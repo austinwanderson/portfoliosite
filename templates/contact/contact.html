@@ -1,0 +1,63 @@
+{% extends "main.html" %} {% block title %}Austin W. Anderson{% endblock %} {% block navbar %}{% include "./commons/navbar.html" %}{% endblock %} {% block content %}
+<main>
+	<div class="mdc-layout-grid--span-12 home-starting-grid">
+		<div class="mdc-layout-grid__inner contactDiv" id="contactDiv" style="min-height:-webkit-fill-available;">
+			<div class="mdc-layout-grid__cell--span-12">
+				<div class="mdc-layout-grid__inner">
+					<div class="mdc-layout-grid__cell--span-12 grid-80-lg contactHeader fade-up" id="contactHeader" style="margin-top: 8vh;">
+						<h2 class="secHead" style="color: white;text-align: center;margin-bottom: 0;">Let's Talk</h2>
+						<p class="contactDivP" style="margin-bottom: 20px;">Fill out the form below and I'll respond within 24 hours. Be sure to give me an idea of what you're looking to create.</p>
+					</div>
+				</div>
+				<div class="mdc-layout-grid__inner grid-50-lg contactForm fade-up" id="contactForm">
+					<form action="https://formspree.io/aanderson0329@gmail.com" method="POST" id="contactMe" style="width:inherit;">
+						<div class="mdc-layout-grid__cell--span-12">						
+							<div class="mdc-text-field" id="nameField" style="width: 100%;margin: 0;background: none;margin-bottom:12px;">
+								<input type="text" name="clientName" id="nameField" class="mdc-text-field__input">
+								<label for="nameField" class="mdc-floating-label">Your Name</label>
+								<!--<div class="mdc-notched-outline">
+									<svg>
+	      								<path class="mdc-notched-outline__path"/>
+	    							</svg>
+								</div>
+								<div class="mdc-notched-outline__idle"></div>-->
+							</div>
+						</div>
+						<div class="mdc-layout-grid__cell--span-12">
+							<div class="mdc-text-field" id="emailField" style="width: 100%;margin: 0;background: none;">
+								<input type="text" name="clientEmail" id="emailField" class="mdc-text-field__input">
+								<label for="emailField" class="mdc-floating-label">Your Email</label>
+								<!--<div class="mdc-notched-outline">
+									<svg>
+	      								<path class="mdc-notched-outline__path"/>
+	    							</svg>
+								</div>
+								<div class="mdc-notched-outline__idle"></div>-->
+							</div>
+						</div>
+						<div class="mdc-layout-grid__cell--span-12" style="margin-top: 55px;">
+							<div class="mdc-text-field text-field mdc-text-field--fullwidth mdc-text-field--textarea mdc-text-field--upgraded" id="messageField">
+								<textarea id="messageField" name="clientMessage" class="mdc-text-field__input" rows="8" style="border: solid 1px;border-radius: 3px;"></textarea>
+								<label style="margin-left: 12px;" for="messageField" class="mdc-floating-label">What are you looking for?</label>
+							</div>
+						</div>
+						<div class="mdc-layout-grid__cell--span-12" style="margin-top: 20px;">
+							<div style="width: 180px;margin: 0 auto;">
+							<button type="submit" class="mdc-button mdc-button--raised mdc-ripple-surface--light sendMessageBtn" id="sendMessageBtn" style="margin-bottom: 12vh;">Send Message</button>
+							</div>
+						</div>
+						<input type="hidden" name="_next" value="/thanks" />	
+						<input type="text" name="_gotcha" style="display:none" />
+					</form>							
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %} {% block footer%}{% include "./commons/footer.html" %}{% endblock %} {% block javascript %}
+<script type="text/javascript">
+	const textField = new mdc.textField.MDCTextField(document.querySelector('#nameField'));
+	const textField2 = new mdc.textField.MDCTextField(document.querySelector('#emailField'));
+	const textField3 = new mdc.textField.MDCTextField(document.querySelector('#messageField'));
+</script>
+{% endblock %}
